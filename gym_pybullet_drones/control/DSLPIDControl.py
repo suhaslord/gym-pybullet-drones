@@ -60,7 +60,7 @@ class DSLPIDControl(BaseControl):
             self.MIXER_MATRIX = np.array([
                                     [0, -1,  -1],
                                     [+1, 0, 1],
-                                    [0,  1, -1],
+                                    [0,  1,  -1],
                                     [-1, 0, 1]
                                     ])
         self.reset()
