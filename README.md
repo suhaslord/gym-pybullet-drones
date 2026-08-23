@@ -65,6 +65,8 @@ python learn.py --multiagent true
 LATEST_MODEL=$(ls -t results | head -n 1) && python play.py --multiagent true --model_path "results/${LATEST_MODEL}/best_model.zip"
 ```
 
+For the multi-agent learning example, the number of simulated drones is set by `DEFAULT_AGENTS` in `examples/learn.py`, which is passed to `MultiHoverAviary` as `num_drones`. The `n_envs` argument to Stable-Baselines3's `make_vec_env()` controls how many Gymnasium environments run in parallel; it does **not** change the number of drones in each environment. Other `BaseAviary` subclasses can set the vehicle count directly with their `num_drones` constructor argument.
+
 <img src="gym_pybullet_drones/assets/rl.gif" alt="rl example" width="375"> <img src="gym_pybullet_drones/assets/marl.gif" alt="marl example" width="375">
 
 ### Run all tests
